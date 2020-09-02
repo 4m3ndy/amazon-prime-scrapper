@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ${SERVICE_NAME}
+  labels:
+    app: ${SERVICE_NAME}
+    tags.datadoghq.com/env: "production"
+spec:
+  template:
+    metadata:
+      labels:
+        tags.datadoghq.com/env: "production"
+    spec:
+      containers:
+      - name: ${SERVICE_NAME}
+        resources:
+          limits:
+            cpu: 250m
+            memory: 512Mi
+          requests:
+            cpu: 150m
+            memory: 128Mi
