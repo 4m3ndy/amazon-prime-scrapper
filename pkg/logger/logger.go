@@ -19,7 +19,6 @@ var (
 
 func init() {
 	logger = logrus.StandardLogger()
-	grpclog.SetLogger(logger)
 }
 
 // CreateLogger creates a logger with default settings compatible with StackDriver. Default logLevel is Error.
@@ -57,12 +56,6 @@ func SetLogLevel(params ...string) {
 	}
 
 	logrus.SetLevel(getLogLevel())
-}
-
-func setupFormatterStackDriver() {
-	logger.Formatter = stackdriver.NewFormatter(
-		stackdriver.WithService(serviceName),
-	)
 }
 
 func getLogLevel() logrus.Level {
