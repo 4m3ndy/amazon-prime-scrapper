@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ${SERVICE_NAME}
+  labels:
+    app: ${SERVICE_NAME}
+spec:
+  selector:
+    matchLabels:
+      app: ${SERVICE_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${SERVICE_NAME}
+        version: v1
+    spec:
+      containers:
+        - name: ${SERVICE_NAME}
+          image: ${IMAGE_URI}:${IMAGE_TAG}
+          imagePullPolicy: Always
+          env:
+          - name: 
+            value: 
+          ports:
+            - name: http
+              containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0

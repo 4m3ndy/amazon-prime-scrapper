@@ -1,0 +1,5 @@
+FROM alpine:3.12 AS builder
+RUN apk --update add ca-certificates tzdata
+ENV TZ=Europe/Berlin
+COPY bin/main /
+CMD ["/main"]

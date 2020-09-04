@@ -1,0 +1,9 @@
+module github.com/4m3ndy/amazon-prime-scrapper
+
+go 1.14
+
+require (
+        github.com/gocolly/colly/v2 v2.1.0
+        github.com/sirupsen/logrus v1.6.0
+        golang.org/x/net v0.0.0-20200513185701-a91f0712d120 // indirect
+)

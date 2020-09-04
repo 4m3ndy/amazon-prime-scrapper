@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazon-scrapper-service
+  labels:
+    app: amazon-scrapper-service
+spec:
+  selector:
+    matchLabels:
+      app: amazon-scrapper-service
+  template:
+    metadata:
+      labels:
+        app: amazon-scrapper-service
+        version: v1.0.0
+    spec:
+      containers:
+        - name: amazon-scrapper-service
+          image: 4m3ndy/amazon-scrapper-service:v1
+          imagePullPolicy: Always
+          env:
+          - name: 
+            value: 
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            limits:
+              cpu: 250m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
