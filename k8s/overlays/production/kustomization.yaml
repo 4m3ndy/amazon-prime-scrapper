@@ -1,4 +1,0 @@
-bases:
-  - ../../base
-patches:
-  - k8s-deployment.yaml
