@@ -3,7 +3,7 @@ Amazon Movie Scrapper based on Golang
 
 ## Prerequisites
 - make >= 3.81
-- docker >= 0.12
+- docker >= 18.09.9
 - kubectl >= 1.15
 
 ## How to run locally
