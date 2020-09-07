@@ -1,8 +1,0 @@
-init:
-	go mod download
-
-build:
-	go build -v -x -o bin/main cmd/server/*.go
-
-docker:
-	docker build -f Dockerfile -t 4m3ndy/amazon-scrapper-service:v1.0.0
